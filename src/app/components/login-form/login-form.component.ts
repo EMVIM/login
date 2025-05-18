@@ -22,8 +22,6 @@ interface LoginForm {
 export class LoginFormComponent {
   loginForm!: FormGroup<LoginForm>;
   showPassword = false;
-  isSubmitting = false;
-  formSubmitted = false;
 
   constructor() {}
 
@@ -50,14 +48,8 @@ export class LoginFormComponent {
   }
 
   onSubmit(): void {
-    this.isSubmitting = true;
     // Simulación de una solicitud de API
     console.log('Form submitted:', this.loginForm.value);
-
-    setTimeout(() => {
-      this.isSubmitting = false;
-      // Aquí podrías redirigir al usuario o mostrar un mensaje de éxito
-    }, 1500);
   }
 
   onGoogleLogin($event: any): void {
@@ -71,12 +63,5 @@ export class LoginFormComponent {
 
   get password() {
     return this.loginForm.get('password');
-  }
-
-  isFieldInvalid(fieldName: string): boolean {
-    const control = this.loginForm.get(fieldName);
-    return (
-      !!control && control.invalid && (control.touched || this.formSubmitted)
-    );
   }
 }

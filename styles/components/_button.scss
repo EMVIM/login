@@ -14,11 +14,6 @@
   position: relative;
   overflow: hidden;
   gap: 8px;
-
-  &:focus-visible {
-    outline: 2px solid vars.$color-primary;
-    outline-offset: 2px;
-  }
 }
 
 // Botón estándar
@@ -35,11 +30,6 @@
       transform: translateY(-1px);
       box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     }
-
-    &:active:not(.button--disabled) {
-      transform: translateY(0);
-      box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
-    }
   }
 
   &--secondary {
@@ -51,10 +41,6 @@
       background-color: vars.$color-white;
       border: 1px solid vars.$color-secondary;
       color: vars.$color-secondary;
-    }
-
-    &:active:not(.button--disabled) {
-      background-color: rgba(vars.$color-primary, 0.1);
     }
   }
 
@@ -97,14 +83,4 @@
     cursor: not-allowed;
     pointer-events: none;
   }
-}
-
-.button__text {
-  font-size: 1rem;
-  line-height: 1.5;
-}
-
-.social-button img {
-  max-height: 24px;
-  width: auto;
 }

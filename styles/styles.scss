@@ -1,6 +1,6 @@
 //base
 @use "./reboot";
-@use "./variables" as vars;
+@use "./variables";
 @use "./init";
 //components
 @use "./components/button";

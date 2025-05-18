@@ -9,11 +9,4 @@ import { LoginComponent } from './pages/login/login.component';
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })
-export class AppComponent {
-  onSubmit() {
-    console.log('Active');
-  }
-  onGoogleLogin() {
-    console.log('submit');
-  }
-}
+export class AppComponent {}

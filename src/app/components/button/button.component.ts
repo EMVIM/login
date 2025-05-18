@@ -9,7 +9,6 @@ export class ButtonComponent {
   //Inputs principales
   text = input<string>(''); // texto del boton
   type = input<'button' | 'submit'>('button'); // tipo del botton
-  ariaLabel = input<string | null>(null); // para accesibilidad
 
   //Opciones de estilo
   buttonStyle = input<'primary' | 'secondary' | 'social'>('primary'); // estilo del botton

@@ -9,11 +9,10 @@ import { BreakpointObserver, BreakpointState } from '@angular/cdk/layout';
   selector: 'app-login',
   imports: [LoginFormComponent, InfoPanelComponent],
   templateUrl: './login.component.html',
-  styleUrl: './login.component.scss',
 })
 export class LoginComponent implements OnInit {
   showInfoPanel = true;
-  private destroy$ = new Subject<void>();
+  private destroy$ = new Subject<void>(); // para la limpieza de subscriptores
 
   constructor(private breakpointObserver: BreakpointObserver) {}
 
