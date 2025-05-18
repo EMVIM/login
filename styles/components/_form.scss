@@ -1,0 +1,58 @@
+@use "../variables" as vars;
+
+.form__group {
+  margin-bottom: 30px;
+  width: 100%;
+}
+
+.form__label {
+  display: block;
+  font-size: 16px;
+  margin-bottom: 11px;
+  color: vars.$color-text;
+}
+
+.form__input {
+  display: block;
+  width: 100%;
+  padding: 17px 12px;
+  font-size: 16px;
+  color: vars.$color-text;
+  background-color: vars.$color-white;
+  border: 1px solid vars.$color-text;
+  border-radius: 12px;
+}
+
+.form__input:focus {
+  border-color: vars.$color-primary;
+}
+
+.form__password-wrapper {
+  position: relative;
+}
+
+.form__password-toggle {
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: vars.$color-text;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.form__checkbox-wrapper {
+  display: flex;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.form__checkbox {
+  margin-right: 10px;
+}
+
+.form__checkbox-label {
+  font-size: 16px;
+  color: vars.$color-text;
+}

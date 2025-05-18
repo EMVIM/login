@@ -1,0 +1,12 @@
+@use "./variables" as vars;
+
+body {
+  font-family: vars.$color-family-base;
+}
+
+.container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

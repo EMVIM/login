@@ -1,0 +1,68 @@
+<div class="login__logo">
+  <img src="assets/icon.png" alt="icon" />
+</div>
+<h1 class="login__title">INICIAR SESIÓN</h1>
+<div class="login__content">
+  <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="form">
+    <div class="form__group">
+      <label class="form__label" for="email">Correo electrónico</label>
+      <input
+        id="email"
+        type="email"
+        class="form__input"
+        placeholder="ejemplo@gmail.com"
+        formControlName="email"
+      />
+    </div>
+    <div class="form__group">
+      <label class="form__label" for="password">Contraseña</label>
+      <div class="form__password-wrapper">
+        <input
+          id="password"
+          [type]="showPassword ? 'text' : 'password'"
+          class="form__input"
+          placeholder="••••••"
+          formControlName="password"
+        />
+        <button
+          type="button"
+          class="form__password-toggle"
+          (click)="togglePasswordVisibility()"
+        >
+          <i class="far fa-eye"></i>
+        </button>
+      </div>
+    </div>
+    <div class="form__checkbox-wrapper">
+      <input
+        id="remember"
+        type="checkbox"
+        class="form__checkbox"
+        formControlName="remember"
+      />
+      <label for="remember" class="form__checkbox-label">Recordarme</label>
+    </div>
+
+    <app-button
+      text="INGRESAR"
+      type="submit"
+      buttonStyle="primary"
+      [isFullWidth]="true"
+    ></app-button>
+  </form>
+
+  <div class="login__divider">
+    <hr class="login__divider-line" />
+    <span class="login__divider-text">o</span>
+    <hr class="login__divider-line" />
+  </div>
+
+  <app-button
+    text="Continuar con Google"
+    buttonStyle="social"
+    imgSrc="assets/iconGoogle.png"
+    altText="Google logo"
+    [isFullWidth]="true"
+    (buttonClick)="onGoogleLogin($event)"
+  ></app-button>
+</div>

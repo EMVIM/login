@@ -1,12 +1,19 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { ButtonComponent } from './components/button/button.component';
+import { LoginComponent } from './pages/login/login.component';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  imports: [LoginComponent],
+  // imports: [ButtonComponent],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.scss'
+  styleUrl: './app.component.scss',
 })
 export class AppComponent {
-  title = 'codeProject';
+  onSubmit() {
+    console.log('Active');
+  }
+  onGoogleLogin() {
+    console.log('submit');
+  }
 }

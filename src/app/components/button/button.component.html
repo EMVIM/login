@@ -1,0 +1,13 @@
+<button
+  [type]="type()"
+  [class]="getButtonClasses()"
+  [disabled]="isDisabled()"
+  [attr.aria-label]="ariaLabel() || text()"
+  (click)="onClick($event)"
+>
+  @if (imgSrc()) {
+  <img [src]="imgSrc()" [alt]="altText()" class="button__icon" />
+  } @if (text()) {
+  <span class="button__text">{{ text() }}</span>
+  }
+</button>

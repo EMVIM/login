@@ -1,0 +1,110 @@
+@use "../variables" as vars;
+
+%button-base {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 11px 16px;
+  border-radius: 8px;
+  font-weight: 500;
+  text-align: center;
+  cursor: pointer;
+  border: none;
+  transition: all 0.2s ease-in-out;
+  position: relative;
+  overflow: hidden;
+  gap: 8px;
+
+  &:focus-visible {
+    outline: 2px solid vars.$color-primary;
+    outline-offset: 2px;
+  }
+}
+
+// Botón estándar
+.button {
+  @extend %button-base;
+
+  // Variantes de estilo
+  &--primary {
+    background-color: vars.$color-primary;
+    color: vars.$color-white;
+
+    &:hover:not(.button--disabled) {
+      background-color: vars.$color-primary-dark;
+      transform: translateY(-1px);
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    &:active:not(.button--disabled) {
+      transform: translateY(0);
+      box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
+    }
+  }
+
+  &--secondary {
+    background-color: vars.$color-secondary;
+    color: vars.$color-white;
+    border: 1px solid vars.$color-white;
+
+    &:hover:not(.button--disabled) {
+      background-color: vars.$color-white;
+      border: 1px solid vars.$color-secondary;
+      color: vars.$color-secondary;
+    }
+
+    &:active:not(.button--disabled) {
+      background-color: rgba(vars.$color-primary, 0.1);
+    }
+  }
+
+  // Modificadores
+  &--full {
+    display: flex;
+    width: 100%;
+  }
+
+  &--disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    pointer-events: none;
+  }
+
+  &--loading {
+    cursor: wait;
+  }
+}
+
+// Botón social
+.social-button {
+  @extend %button-base;
+  width: 100%;
+  padding: 11px;
+  border: 1px solid vars.$color-text;
+  background-color: vars.$color-white;
+  color: vars.$color-text;
+  font-weight: 500;
+  gap: 15px;
+
+  &:hover:not(.button--disabled) {
+    background-color: vars.$color-text;
+    color: vars.$color-white;
+    font-weight: bold;
+  }
+
+  &.button--disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    pointer-events: none;
+  }
+}
+
+.button__text {
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.social-button img {
+  max-height: 24px;
+  width: auto;
+}
